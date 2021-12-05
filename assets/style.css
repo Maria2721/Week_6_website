@@ -1,26 +1,30 @@
 .container {
     display: grid;
     width: 100%;
-    height: 1080px;
+    height: 100%;
     grid-template-areas: "nav nav"
         "main main";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 1fr 5fr;
     grid-gap: 0px;
     background-color: #FFF;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .navigation {
     display: grid;
     grid-area: nav;
-    /* border: 3px solid #949599; */
     grid-template-areas: "menu1 menu2 menu3 menu4 menu5";
     grid-template-columns: 4fr repeat(4, 1fr);
-    grid-template-rows: 1fr;
-
+    grid-template-rows: 25vh;
     justify-items: center;
     align-items: center;
-    margin-right: 200px;
+    margin-right: 10vw;
 }
 
 .menu1 {
@@ -48,73 +52,84 @@
 .main {
     display: grid;
     grid-area: main;
-    /* border: 3px solid rgb(129, 69, 20); */
-    grid-template-areas: "main_title1 portfolio"
-        "main_title2 portfolio"
-        "more portfolio"
-        "buttonlk portfolio"
-        "scroll portfolio";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.1fr 0.1fr 0.3fr 0.5fr 1fr;
+    grid-template-areas: "maintext maintext portfolio"
+        "buttonlk buttonlk portfolio"
+        "scrolldown photo1 portfolio";
+    grid-template-columns: 1fr 1fr 50%;
+    grid-template-rows: 0.8fr 0.6fr 0.8fr;
     margin-left: 150px;
+    column-gap: 50px;
+    margin-top: 160px;
+}
+
+.maintext {
+    display: grid;
+    grid-area: maintext;
+    grid-template-areas: "main_title1"
+        "main_title2"
+        "more";
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr;
 }
 
 .main_title1 {
     grid-area: main_title1;
 }
 
+.main_title1 h1 {
+    margin: 0;
+}
+
 .main_title2 {
     grid-area: main_title2;
 }
 
+.main_title2 h1 {
+    margin: 0;
+}
+
 .more {
     grid-area: more;
-    margin-top: 32px;
-    /* border: 3px solid #2cb92c; */
+    margin-right: 160px;
 }
 
 #buttonlk {
     grid-area: buttonlk;
-    margin-top: 74px;
     background: #D16A1D;
-    box-shadow:
-        0px 0px 30px 10px rgba(209, 106, 29, 0.24);
+    box-shadow: 0px 0px 30px 10px rgba(209, 106, 29, 0.24);
     border-radius: 32px;
     width: 197px;
     height: 60px;
+    align-self: center;
 }
 
-.scroll {
-    grid-area: scroll;
-    width: 86px;
-    height: 18px;
-    font-family: Gilroy-Light;
-    font-size: 16px;
-    line-height: 19px;
-    color: #000000;
+.scrolldown {
+    grid-area: scrolldown;
     transform: rotate(-90deg);
-    margin-top: 200px;
-
+    align-self: center;
+    justify-self: start;
+    margin-left: 50px;
 }
 
 .portfolio {
     display: grid;
     grid-area: portfolio;
-    /* border: 3px solid rgb(129, 69, 20); */
-    grid-template-areas: "photo1 photo2 photo3";
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "photo2 photo3";
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-gap: 50px;
-    align-items: end;
     margin-right: 125px;
 }
 
 .photo1 {
     grid-area: photo1;
+    justify-self: end;
+    align-self: end;
 }
 
 .photo2 {
     grid-area: photo2;
+    align-self: end;
 }
 
 .photo3 {
@@ -125,9 +140,9 @@
 /*форматирование текста*/
 
 .navigation {
-    font-family: Gilroy;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 900;
     font-size: 19px;
     line-height: 23px;
     color: #000000;
@@ -137,34 +152,42 @@
     font-size: 27px;
 }
 
-.main_title1 {
-    font-family: Gilroy-Light;
+.main_title1 h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     font-size: 66px;
     line-height: 77px;
     color: #000000;
 }
 
-.main_title2 {
-    font-family: Gilroy;
+.main_title2 h1 {
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 65px;
     line-height: 80px;
     color: #000000;
 }
 
-.more {
-    font-family: Gilroy-Light;
+.more p {
+    font-family: 'Roboto', sans-serif;
     font-size: 23px;
     line-height: 27px;
-
     color: #393636;
 }
 
 #buttonlk {
-    font-family: Gilroy-Light;
+    font-family: 'Roboto', sans-serif;
     font-size: 21px;
     line-height: 25px;
-
     color: #FFFFFF;
+}
+
+.scroll {
+    width: 86px;
+    height: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
 }
